@@ -6,14 +6,38 @@
     <title>产品介绍 - 梅睿安公司</title>
     <style>
         body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #333; }
-        header { background: #333; color: #fff; padding: 1rem; text-align: center; }
-        .container { width: 80%; margin: auto; overflow: hidden; padding: 20px; }
-        .product-box { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin-bottom: 40px; }
+        header { background: #333; color: #fff; padding: 1.5rem; text-align: center; }
+        .container { width: 80%; max-width: 1000px; margin: auto; overflow: hidden; padding: 20px; }
+        
+        /* 统一列表样式 */
+        .product-box { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 30px; 
+            align-items: center; 
+            margin-bottom: 50px; 
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee; /* 添加分割线，让列表更清晰 */
+        }
+        /* 移除最后一个产品的分割线 */
+        .product-box:last-child { border-bottom: none; }
+
         .product-img { flex: 1; min-width: 300px; }
-        .product-img img { width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        .product-info { flex: 1; min-width: 300px; }
-        h2 { color: #2c3e50; }
-        .btn { background: #e67e22; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; }
+        .product-img img { width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: block; }
+        
+        .product-info { flex: 1.5; min-width: 300px; }
+        h2 { color: #2c3e50; margin-top: 0; }
+        p { color: #666; margin-bottom: 20px; }
+        
+        .btn { 
+            background: #e67e22; 
+            color: white; 
+            padding: 10px 25px; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            display: inline-block;
+        }
+        .btn:hover { background: #d35400; }
     </style>
 </head>
 <body>
@@ -22,64 +46,52 @@
     </header>
 
     <div class="container">
-        <!-- 第一个产品 -->
+        <!-- 产品 1 -->
         <section class="product-box">
-            <div class="product-img">
-                <!-- 注意：图片建议放在仓库的 images 文件夹下 -->
-                <img src="images/1.jpg" alt="产品 1">
-            </div>
+            <div class="product-img"><img src="images/1.jpg" alt="产品 1"></div>
             <div class="product-info">
                 <h2>产品1</h2>
-                <p>这里写介绍</p>
+                <p>这里填写产品1的详细描述文字。</p>
                 <a href="#" class="btn">了解更多</a>
             </div>
         </section>
 
-        <!-- 第二个产品 -->
-        <section class="product-box" style="flex-direction: row-reverse;">
-            <div class="product-img">
-                <img src="images/2.jpg" alt="产品 2">
-            </div>
+        <!-- 产品 2 -->
+        <section class="product-box">
+            <div class="product-img"><img src="images/2.jpg" alt="产品 2"></div>
             <div class="product-info">
                 <h2>产品2</h2>
-                <p>这里写介绍</p>
+                <p>这里填写产品2的详细描述文字。</p>
                 <a href="#" class="btn">立即购买</a>
-
-                
-                 <!-- 第一个产品 -->
-        <section class="product-box">
-            <div class="product-img">
-                <!-- 注意：图片建议放在仓库的 images 文件夹下 -->
-                <img src="images/3.jpg" alt="产品 3">
             </div>
+        </section>
+
+        <!-- 产品 3 -->
+        <section class="product-box">
+            <div class="product-img"><img src="images/3.jpg" alt="产品 3"></div>
             <div class="product-info">
                 <h2>产品3</h2>
-                <p>这里写介绍</p>
+                <p>这里填写产品3的详细描述文字。</p>
                 <a href="#" class="btn">了解更多</a>
             </div>
         </section>
-                
 
-        <!-- 第二个产品 -->
-        <section class="product-box" style="flex-direction: row-reverse;">
-            <div class="product-img">
-                <img src="images/4.jpg" alt="产品 4">
-            </div>
+        <!-- 产品 4 -->
+        <section class="product-box">
+            <div class="product-img"><img src="images/4.jpg" alt="产品 4"></div>
             <div class="product-info">
                 <h2>产品4</h2>
-                <p>这里写介绍</p>
+                <p>这里填写产品4的详细描述文字。</p>
                 <a href="#" class="btn">立即购买</a>
             </div>
         </section>
-                <!-- 第一个产品 -->
+
+        <!-- 产品 5 -->
         <section class="product-box">
-            <div class="product-img">
-                <!-- 注意：图片建议放在仓库的 images 文件夹下 -->
-                <img src="images/5.jpg" alt="产品 5">
-            </div>
+            <div class="product-img"><img src="images/5.jpg" alt="产品 5"></div>
             <div class="product-info">
                 <h2>产品5</h2>
-                <p>这里写介绍</p>
+                <p>这里填写产品5的详细描述文字。</p>
                 <a href="#" class="btn">了解更多</a>
             </div>
         </section>
