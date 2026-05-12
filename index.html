@@ -2,20 +2,50 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>我的视频网站</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品介绍 - 你的品牌名</title>
     <style>
-        body { display: flex; justify-content: center; align-items: center; height: 100vh; background: #000; margin: 0; }
-        video { max-width: 90%; border: 2px solid #fff; border-radius: 8px; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #333; }
+        header { background: #333; color: #fff; padding: 1rem; text-align: center; }
+        .container { width: 80%; margin: auto; overflow: hidden; padding: 20px; }
+        .product-box { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin-bottom: 40px; }
+        .product-img { flex: 1; min-width: 300px; }
+        .product-img img { width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .product-info { flex: 1; min-width: 300px; }
+        h2 { color: #2c3e50; }
+        .btn { background: #e67e22; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; }
     </style>
 </head>
 <body>
+    <header>
+        <h1>我的产品展示</h1>
+    </header>
 
-    <!-- controls 属性用于显示播放/暂停、音量等控件 -->
-    <video controls width="800">
-        <!-- 将 movie.mp4 替换为你上传到 GitHub 仓库中的视频文件名 -->
-        <source src="1.mp4" type="video/mp4">
-        您的浏览器不支持 HTML5 视频播放。
-    </video>
+    <div class="container">
+        <!-- 第一个产品 -->
+        <section class="product-box">
+            <div class="product-img">
+                <!-- 注意：图片建议放在仓库的 images 文件夹下 -->
+                <img src="images/product1.jpg" alt="产品 1">
+            </div>
+            <div class="product-info">
+                <h2>全能智能手表</h2>
+                <p>这款手表具备全天候心率监测、超长续航和防水功能。无论是运动健身还是商务办公，它都是你的完美伴侣。</p>
+                <a href="#" class="btn">了解更多</a>
+            </div>
+        </section>
 
+        <!-- 第二个产品 -->
+        <section class="product-box" style="flex-direction: row-reverse;">
+            <div class="product-img">
+                <img src="images/product2.jpg" alt="产品 2">
+            </div>
+            <div class="product-info">
+                <h2>极简降噪耳机</h2>
+                <p>纯净音质，一键开启静谧世界。采用人体工学设计，佩戴舒适，为您带来沉浸式的音频体验。</p>
+                <a href="#" class="btn">立即购买</a>
+            </div>
+        </section>
+    </div>
 </body>
 </html>
