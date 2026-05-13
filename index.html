@@ -16,12 +16,12 @@
             gap: 30px; 
             align-items: center; 
             margin-bottom: 50px; 
-            padding-bottom: 30px;
+            padding-bottom: 30px; 
             border-bottom: 1px solid #eee; /* 添加分割线，让列表更清晰 */
         }
-        /* 移除最后一个产品的分割线 */
+        /* 移除最后一个区块的分割线 */
         .product-box:last-child { border-bottom: none; }
-
+        
         .product-img { flex: 1; min-width: 300px; }
         .product-img img { width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: block; }
         
@@ -35,9 +35,18 @@
             padding: 10px 25px; 
             text-decoration: none; 
             border-radius: 5px; 
-            display: inline-block;
+            display: inline-block; 
         }
         .btn:hover { background: #d35400; }
+        
+        /* 抖音按钮专属样式 */
+        .btn-douyin {
+            background: #fe2c55;
+            font-weight: bold;
+        }
+        .btn-douyin:hover {
+            background: #e11d43;
+        }
     </style>
 </head>
 <body>
@@ -93,6 +102,24 @@
                 <h2>产品5</h2>
                 <p>这里填写产品5的详细描述文字。</p>
                 <a href="#" class="btn">了解更多</a>
+            </div>
+        </section>
+
+        <!-- 视频中心区块 -->
+        <section class="product-box" style="flex-direction: column; align-items: center; text-align: center; margin-top: 20px;">
+            <div class="product-info" style="max-width: 600px; margin-bottom: 20px;">
+                <h2>梅睿安公司 - 视频中心</h2>
+                <p>欢迎点击下方按钮，前往官方抖音账号观看高清产品演示与最新企业动态。</p>
+            </div>
+            <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
+                <!-- 第一个视频链接 -->
+                <a href="douyin.com" target="_blank" class="btn btn-douyin">
+                    🎬 观看官方视频 1
+                </a>
+                <!-- 第二个视频链接 -->
+                <a href="douyin.com" target="_blank" class="btn btn-douyin">
+                    🎬 观看官方视频 2
+                </a>
             </div>
         </section>
     </div>
