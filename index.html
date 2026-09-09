@@ -335,8 +335,8 @@
         <h3>添加微信</h3>
         <p class="sub-tip">扫码或复制微信号，添加专属客服</p>
         <div class="qr-wrap">
-            <!-- TODO: 把 src 换成你自己的微信二维码图片（如 images/wechat-qr.png） -->
-            <img id="wechat-qr-img" src="images/wechat-qr.png" alt="微信二维码"
+            <!-- TODO: 把 src 换成你自己的微信二维码图片（如 images/wechat-qr.jng） -->
+            <img id="wechat-qr-img" src="images/wechat-qr.jng" alt="微信二维码"
                  onerror="this.style.display='none';document.getElementById('qr-placeholder').style.display='block';">
             <div class="qr-placeholder" id="qr-placeholder" style="display:none;">二维码图片未找到<br>请在 index.html 中把<br>WECHAT_QR 指向你的二维码图片</div>
         </div>
@@ -354,7 +354,7 @@
     <script>
         // ========== 微信配置（请在这里修改）==========
         var WECHAT_ID = 'Mei32325443';        // TODO: 改成你的微信号
-        var WECHAT_QR = 'images/wechat-qr.png'; // TODO: 改成你的微信二维码图片路径
+        var WECHAT_QR = 'images/wechat-qr.jng'; // TODO: 改成你的微信二维码图片路径
 
         document.getElementById('wechat-id-text').textContent = WECHAT_ID;
         document.getElementById('wechat-qr-img').src = WECHAT_QR;
