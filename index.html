@@ -8,38 +8,55 @@
         body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #333; }
         header { background: #333; color: #fff; padding: 1.5rem; text-align: center; }
         .container { width: 80%; max-width: 1000px; margin: auto; overflow: hidden; padding: 20px; }
-        
-        /* 统一列表样式 */
-        .product-box { 
-            display: flex; 
-            flex-wrap: wrap; 
-            gap: 30px; 
-            align-items: center; 
-            margin-bottom: 50px; 
-            padding-bottom: 30px; 
-            border-bottom: 1px solid #eee; /* 添加分割线，让列表更清晰 */
+
+        /* 公司介绍区块 */
+        .intro-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: center;
+            margin-bottom: 50px;
+            padding: 30px;
+            background: #fafafa;
+            border-left: 4px solid #e67e22;
+            border-radius: 8px;
         }
-        /* 移除最后一个区块的分割线 */
+        .intro-img { flex: 1; min-width: 280px; }
+        .intro-img img { width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: block; }
+        .intro-text { flex: 1.5; min-width: 280px; }
+        .intro-text h2 { color: #2c3e50; margin-top: 0; }
+        .intro-text .welcome { color: #e67e22; font-weight: bold; margin-bottom: 16px; font-size: 16px; }
+        .intro-text p { color: #555; text-align: justify; }
+
+        /* 统一列表样式 */
+        .product-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
         .product-box:last-child { border-bottom: none; }
-        
+
         .product-img { flex: 1; min-width: 300px; }
         .product-img img { width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: block; }
-        
+
         .product-info { flex: 1.5; min-width: 300px; }
         h2 { color: #2c3e50; margin-top: 0; }
         p { color: #666; margin-bottom: 20px; }
-        
-        .btn { 
-            background: #e67e22; 
-            color: white; 
-            padding: 10px 25px; 
-            text-decoration: none; 
-            border-radius: 5px; 
-            display: inline-block; 
+
+        .btn {
+            background: #e67e22;
+            color: white;
+            padding: 10px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
         }
         .btn:hover { background: #d35400; }
-        
-        /* 抖音按钮专属样式 */
+
         .btn-douyin {
             background: #fe2c55;
             font-weight: bold;
@@ -47,9 +64,8 @@
         .btn-douyin:hover {
             background: #e11d43;
         }
-        
+
         /* ========== 加微信功能样式 ========== */
-        /* 右下角悬浮按钮 */
         .wechat-float-btn {
             position: fixed;
             right: 24px;
@@ -58,7 +74,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            background: #07c160; /* 微信绿 */
+            background: #07c160;
             color: #fff;
             font-size: 15px;
             font-weight: bold;
@@ -71,8 +87,6 @@
         }
         .wechat-float-btn:hover { background: #06ad56; transform: translateY(-2px); }
         .wechat-float-btn svg { width: 22px; height: 22px; flex-shrink: 0; }
-
-        /* 遮罩层 */
         .wechat-overlay {
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
@@ -83,8 +97,6 @@
             transition: opacity .25s;
         }
         .wechat-overlay.active { opacity: 1; visibility: visible; }
-
-        /* 弹窗 */
         .wechat-modal {
             position: fixed;
             top: 50%; left: 50%;
@@ -102,7 +114,6 @@
             transition: opacity .25s, transform .25s;
         }
         .wechat-modal.active { opacity: 1; visibility: visible; transform: translate(-50%, -50%) scale(1); }
-
         .wechat-modal .close-btn {
             position: absolute;
             top: 10px; right: 14px;
@@ -116,7 +127,6 @@
         .wechat-modal .close-btn:hover { color: #333; }
         .wechat-modal h3 { margin: 0 0 6px; font-size: 20px; color: #333; }
         .wechat-modal .sub-tip { margin: 0 0 18px; font-size: 13px; color: #999; }
-
         .wechat-modal .qr-wrap {
             width: 220px;
             height: 220px;
@@ -131,9 +141,7 @@
         }
         .wechat-modal .qr-wrap img { width: 100%; height: 100%; object-fit: contain; display: block; }
         .wechat-modal .qr-placeholder { font-size: 13px; color: #aaa; padding: 10px; line-height: 1.8; }
-
         .wechat-modal .scan-tip { margin: 0 0 16px; font-size: 14px; color: #666; }
-
         .wechat-id-row {
             display: flex;
             align-items: center;
@@ -157,8 +165,6 @@
             flex-shrink: 0;
         }
         .wechat-id-row .copy-btn:hover { background: #06ad56; }
-
-        /* 复制成功提示 */
         .copy-toast {
             position: fixed;
             left: 50%;
@@ -183,6 +189,18 @@
         <h1>梅荣裕公司介绍</h1>
     </header>
     <div class="container">
+        <!-- ========== 公司介绍区块（新增） ========== -->
+        <section class="intro-box">
+            <div class="intro-img">
+                <img src="images/intro.png" alt="模块式PPO全塑分集水器">
+            </div>
+            <div class="intro-text">
+                <h2>佛山梅斯睿蒂科技有限公司</h2>
+                <p class="welcome">热忱欢迎国内外客商来我司洽谈合作</p>
+                <p>佛山梅斯睿蒂科技有限公司致力于供暖系统配套产品的研发、生产和销售。其研发团队早在2000年就开始研究塑料管道系统的配套产品，是国内最早一批研究塑料管路系统和分集水器的团队，有丰富的产品研发应用经验。其团队最近研发的模块式PPO全塑分集水器，再一次吸引地暖人的眼光，引起同行强烈的反应。该款分集水器源自欧洲最新塑料应用专利技术，采用进口著名品牌原料，先进合理的结构和生产工艺，使其质量远远优于铜质分集水器，让国产的塑料分集水器进入高端产品的殿堂。</p>
+            </div>
+        </section>
+
         <!-- 产品 1 -->
         <section class="product-box">
             <div class="product-img"><img src="images/1.jpg" alt="产品 1"></div>
@@ -228,12 +246,12 @@
                 <a href="#" class="btn">了解更多</a>
             </div>
         </section>
-        
+
          <section class="product-box">
             <div class="product-img"><img src="images/6.jpg" alt="产品 6"></div>
             <div class="product-info">
                 <h2>产品6</h2>
-                <p>这里填写产品1的详细描述文字。</p>
+                <p>这里填写产品6的详细描述文字。</p>
                 <a href="#" class="btn">了解更多</a>
             </div>
         </section>
@@ -241,7 +259,7 @@
             <div class="product-img"><img src="images/7.jpg" alt="产品 7"></div>
             <div class="product-info">
                 <h2>产品7</h2>
-                <p>这里填写产品1的详细描述文字。</p>
+                <p>这里填写产品7的详细描述文字。</p>
                 <a href="#" class="btn">了解更多</a>
             </div>
         </section>
@@ -249,7 +267,7 @@
             <div class="product-img"><img src="images/8.jpg" alt="产品 8"></div>
             <div class="product-info">
                 <h2>产品8</h2>
-                <p>这里填写产品1的详细描述文字。</p>
+                <p>这里填写产品8的详细描述文字。</p>
                 <a href="#" class="btn">了解更多</a>
             </div>
         </section>
@@ -257,7 +275,7 @@
             <div class="product-img"><img src="images/9.jpg" alt="产品 9"></div>
             <div class="product-info">
                 <h2>产品9</h2>
-                <p>这里填写产品1的详细描述文字。</p>
+                <p>这里填写产品9的详细描述文字。</p>
                 <a href="#" class="btn">了解更多</a>
             </div>
         </section>
@@ -265,7 +283,7 @@
             <div class="product-img"><img src="images/10.jpg" alt="产品 10"></div>
             <div class="product-info">
                 <h2>产品10</h2>
-                <p>这里填写产品1的详细描述文字。</p>
+                <p>这里填写产品10的详细描述文字。</p>
                 <a href="#" class="btn">了解更多</a>
             </div>
         </section>
@@ -273,7 +291,7 @@
             <div class="product-img"><img src="images/11.jpg" alt="产品 11"></div>
             <div class="product-info">
                 <h2>产品11</h2>
-                <p>这里填写产品1的详细描述文字。</p>
+                <p>这里填写产品11的详细描述文字。</p>
                 <a href="#" class="btn">了解更多</a>
             </div>
         </section>
@@ -281,7 +299,7 @@
             <div class="product-img"><img src="images/12.jpg" alt="产品 12"></div>
             <div class="product-info">
                 <h2>产品12</h2>
-                <p>这里填写产品1的详细描述文字。</p>
+                <p>这里填写产品12的详细描述文字。</p>
                 <a href="#" class="btn">了解更多</a>
             </div>
         </section>
@@ -291,33 +309,22 @@
                 <h2>梅荣裕公司 - 视频中心</h2>
                 <p>欢迎点击下方按钮，前往官方抖音账号观看高清产品演示与最新企业动态。</p>
             </div>
-            
-            <!-- 视频卡片容器 -->
+
             <div style="display: flex; gap: 25px; flex-wrap: wrap; justify-content: center; width: 100%;">
-                
-                <!-- 第一个视频卡片 -->
                 <a href="https://v.douyin.com/gKvvMhP71Fw/" target="_blank" class="btn btn-douyin" style="padding: 0; overflow: hidden; background: #222; border-radius: 8px; width: 260px; text-decoration: none;">
-                    <!-- 🎬 视频1的封面图片（请把 src 改为你实际的图片路径，如 images/v1.png） -->
                     <img src="images/v1.png" alt="视频1" style="width: 100%; height: 150px; object-fit: cover; display: block;">
                     <div style="padding: 15px; color: white;">
-         
                     </div>
                 </a>
-                
-                <!-- 第二个视频卡片 -->
                 <a href="https://v.douyin.com/yh3BY71kCLs/" target="_blank" class="btn btn-douyin" style="padding: 0; overflow: hidden; background: #222; border-radius: 8px; width: 260px; text-decoration: none;">
-                    <!-- 🎬 视频2的封面图片（请把 src 改为你实际的图片路径，如 images/v2.png） -->
                     <img src="images/v2.png" alt="视频2" style="width: 100%; height: 150px; object-fit: cover; display: block;">
                     <div style="padding: 15px; color: white;">
-                   
                     </div>
                 </a>
             </div>
         </section>
     </div>
 
-    <!-- ========== 加微信功能 ========== -->
-    <!-- 右下角悬浮按钮 -->
     <button class="wechat-float-btn" onclick="openWechatModal()" aria-label="添加微信">
         <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path d="M9.5 4C5.36 4 2 6.91 2 10.5c0 2.02 1.05 3.82 2.72 5.02L4 18.5l3.11-1.61c.74.2 1.53.32 2.39.32h.55a5.9 5.9 0 0 1-.22-1.55c0-3.4 3.27-6.16 7.3-6.16h.38C16.9 6.47 13.5 4 9.5 4zM7 8.5a.94.94 0 1 1 0 1.88.94.94 0 0 1 0-1.88zm5 0a.94.94 0 1 1 0 1.88.94.94 0 0 1 0-1.88z"/>
@@ -325,18 +332,13 @@
         </svg>
         加微信
     </button>
-
-    <!-- 遮罩层 -->
     <div class="wechat-overlay" id="wechat-overlay" onclick="closeWechatModal()"></div>
-
-    <!-- 弹窗 -->
     <div class="wechat-modal" id="wechat-modal" role="dialog" aria-label="添加微信">
         <button class="close-btn" onclick="closeWechatModal()" aria-label="关闭">&times;</button>
         <h3>添加微信</h3>
         <p class="sub-tip">扫码或复制微信号，添加专属客服</p>
         <div class="qr-wrap">
-            <!-- TODO: 把 src 换成你自己的微信二维码图片（如 images/wechat-qr.jng） -->
-            <img id="wechat-qr-img" src="images/wechat-qr.jng" alt="微信二维码"
+            <img id="wechat-qr-img" src="images/wechat-qr.jpg" alt="微信二维码"
                  onerror="this.style.display='none';document.getElementById('qr-placeholder').style.display='block';">
             <div class="qr-placeholder" id="qr-placeholder" style="display:none;">二维码图片未找到<br>请在 index.html 中把<br>WECHAT_QR 指向你的二维码图片</div>
         </div>
@@ -347,18 +349,12 @@
             <button class="copy-btn" onclick="copyWechatId()">复制</button>
         </div>
     </div>
-
-    <!-- 复制成功提示 -->
     <div class="copy-toast" id="copy-toast">微信号已复制，去微信粘贴添加</div>
-
     <script>
-        // ========== 微信配置（请在这里修改）==========
-        var WECHAT_ID = 'Mei32325443';        // TODO: 改成你的微信号
-        var WECHAT_QR = 'images/wechat-qr.jpg'; // TODO: 改成你的微信二维码图片路径
-
+        var WECHAT_ID = 'Mei32325443';
+        var WECHAT_QR = 'images/wechat-qr.jpg';
         document.getElementById('wechat-id-text').textContent = WECHAT_ID;
         document.getElementById('wechat-qr-img').src = WECHAT_QR;
-
         function openWechatModal() {
             document.getElementById('wechat-modal').classList.add('active');
             document.getElementById('wechat-overlay').classList.add('active');
@@ -369,11 +365,9 @@
             document.getElementById('wechat-overlay').classList.remove('active');
             document.body.style.overflow = '';
         }
-        // 按 ESC 关闭弹窗
         document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') closeWechatModal();
         });
-
         function copyWechatId() {
             var id = WECHAT_ID;
             function showTip() {
